@@ -25,7 +25,7 @@ public class Variables {
 		System.out.println(thirdNumber);
 		
 		int hugeNumber = 1_000_000_000;
-		long hugeNumber2 = 3_000_000_000L; // 자바에선 int로 인식?
+		long hugeNumber2 = 3_000_000_000L; // l or L
 		
 		boolean yesOrno = true;
 		boolean yesOrno2 = false;
