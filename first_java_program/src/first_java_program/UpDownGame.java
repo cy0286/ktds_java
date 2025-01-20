@@ -23,5 +23,6 @@ public class UpDownGame {
 			System.out.println("Down");
 		}
 		System.out.println("정답은 " + quiz + "입니다. ");
+		
 	}
 }
