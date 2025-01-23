@@ -3,3 +3,5 @@
 *.project
 first_java_program/.settings/
 *.class
+oop/.settings/org.eclipse.core.resources.prefs
+oop/.settings/org.eclipse.jdt.core.prefs
