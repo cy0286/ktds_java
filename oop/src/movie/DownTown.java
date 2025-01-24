@@ -12,6 +12,7 @@ public class DownTown {
 		Movie 하얼빈 = new Movie();
 		하얼빈.title = "하얼빈";
 		하얼빈.runningTime = 120;
+		하얼빈.printMovieInformation();
 		
 		Seat h6 = new Seat(); 
 		h6.seatNumber = "h6";
@@ -37,6 +38,11 @@ public class DownTown {
 		cgv.light = sony;
 		cgv.airconditioner = carrier;
 		cgv.projector = miniBeam;
+		
+		// 하얼빈은 movie 타입, movie 는 reperance type으로 주소를 공유함
+		// cgv.movie = 하얼빈임
+		// call chain
+		cgv.movie.printMovieInformation();
 		
 		cgv.playMovie();
 		cgv.playMovie();
