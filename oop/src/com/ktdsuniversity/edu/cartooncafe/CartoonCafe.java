@@ -5,7 +5,28 @@ public class CartoonCafe {
 	/**
 	 * 만화책 대여비
 	 */
-	private final int RENTAL_PRICE = 1000;
+	//private final int RENTAL_PRICE = 1000;
+	
+	// 클래스 상수를 초기화 시키는 방법
+	// 1. 클래스 상수 선언과 동시에 값 초기화
+	public static final int RENTAL_PRICE = 1000;
+	
+	// 2. 클래스 상수만 선언해두고 static scope 에서 값 초기화
+	public static final int VIP_RENTAL_FEE;
+	
+	// 과거의 추세
+	// 클래스 상수를 클래스에 정의함
+	// 현재의 추세
+	// 인터페이스에 변수를 정의함 (인터페이스의 변수 => 상수)
+	// 이런 이유로 2번 방법을 잘 안 씀
+	
+	// 클래스 상수/변수 들을 초기화 하기 위한 영역
+	// 한 클래스에 하나의 static scope 만 사용할 수 있음
+	static {
+		// Static scope 은 자신의 클래스가 가지고 있는 클래스 상수/변수들을 초기화 하는 목적
+		// 자신의 변수/상수를 초기화하기에 클래스명은 생략해야 함
+		VIP_RENTAL_FEE = 100;
+	}
 	
 	/**
 	 * 소지금 (만화카페)
@@ -39,7 +60,8 @@ public class CartoonCafe {
 			else {
 				System.out.println(this.name1.getName() + "를 대여했습니다.");
 				name1.setRentalState(true);
-				this.wallet += this.RENTAL_PRICE;
+				// this.wallet += this.RENTAL_PRICE;
+				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name2.getName()) {
@@ -49,7 +71,8 @@ public class CartoonCafe {
 			else {
 				System.out.println(this.name2.getName() + "를 대여했습니다.");
 				name2.setRentalState(true);
-				this.wallet += this.RENTAL_PRICE;
+				//this.wallet += this.RENTAL_PRICE;
+				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name3.getName()) {
@@ -59,7 +82,8 @@ public class CartoonCafe {
 			else {
 				System.out.println(this.name3.getName() + "를 대여했습니다.");
 				name3.setRentalState(true);
-				this.wallet += this.RENTAL_PRICE;
+				// this.wallet += this.RENTAL_PRICE;
+				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name4.getName()) {
@@ -69,7 +93,8 @@ public class CartoonCafe {
 			else {
 				System.out.println(this.name4.getName() + "를 대여했습니다.");
 				name4.setRentalState(true);
-				this.wallet += this.RENTAL_PRICE;
+				// this.wallet += this.RENTAL_PRICE;
+				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else {

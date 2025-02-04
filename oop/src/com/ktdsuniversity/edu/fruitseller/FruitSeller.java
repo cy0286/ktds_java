@@ -17,6 +17,10 @@ public class FruitSeller {
 	 */
 	private int fruitStock; 
 	
+	public FruitSeller() {
+		
+	}
+	
 	public FruitSeller(int money, int fruitstock) {
 		this.money = money;
 		this.fruitStock = fruitstock;
@@ -41,5 +45,17 @@ public class FruitSeller {
 			this.fruitStock -= quantity;
 			this.money += quantity * this.FRUIT_PRICE;
 		}
+	}
+	
+	public void sell() {
+	
+		// 방법 1 - 단순 복사
+//		if (this.fruitStock >= 1) {
+//			this.fruitStock -= 1;
+//			this.money += 1 * this.FRUIT_PRICE;
+//		}
+		
+		// 방법 2
+		this.sell(1);
 	}
 }
