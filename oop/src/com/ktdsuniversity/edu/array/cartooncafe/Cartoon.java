@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.cartooncafe;
+package com.ktdsuniversity.edu.array.cartooncafe;
 
 public class Cartoon {
 

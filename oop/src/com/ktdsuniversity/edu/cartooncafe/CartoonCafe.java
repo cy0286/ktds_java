@@ -54,45 +54,45 @@ public class CartoonCafe {
 		
 		System.out.println("========== 만화책 대여 ==========");
 		if (bookName == this.name1.getName()) {
-			if(this.name1.getRentalState()) {
+			if(this.name1.getIsRental()) {
 				System.out.println(this.name1.getName() + "는 이미 대여중인 만화책입니다.");
 			}
 			else {
 				System.out.println(this.name1.getName() + "를 대여했습니다.");
-				name1.setRentalState(true);
+				name1.setisRental(true);
 				// this.wallet += this.RENTAL_PRICE;
 				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name2.getName()) {
-			if(this.name2.getRentalState()) {
+			if(this.name2.getIsRental()) {
 				System.out.println(this.name2.getName() + "는 이미 대여중인 만화책입니다.");
 			}
 			else {
 				System.out.println(this.name2.getName() + "를 대여했습니다.");
-				name2.setRentalState(true);
+				name2.setisRental(true);
 				//this.wallet += this.RENTAL_PRICE;
 				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name3.getName()) {
-			if(this.name3.getRentalState()) {
+			if(this.name3.getIsRental()) {
 				System.out.println(this.name3.getName() + "는 이미 대여중인 만화책입니다.");
 			}
 			else {
 				System.out.println(this.name3.getName() + "를 대여했습니다.");
-				name3.setRentalState(true);
+				name3.setisRental(true);
 				// this.wallet += this.RENTAL_PRICE;
 				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
 		}
 		else if (bookName == this.name4.getName()) {
-			if(this.name4.getRentalState()) {
+			if(this.name4.getIsRental()) {
 				System.out.println(this.name4.getName() + "는 이미 대여중인 만화책입니다.");
 			}
 			else {
 				System.out.println(this.name4.getName() + "를 대여했습니다.");
-				name4.setRentalState(true);
+				name4.setisRental(true);
 				// this.wallet += this.RENTAL_PRICE;
 				this.wallet += (int) (Math.random() * 2) == 0 ? CartoonCafe.RENTAL_PRICE :CartoonCafe.VIP_RENTAL_FEE;
 			}
@@ -105,36 +105,36 @@ public class CartoonCafe {
 	public void returnBook(String bookName) {
 		System.out.println("========== 만화책 반납 ==========");
 		if (bookName == this.name1.getName()) {
-			if(this.name1.getRentalState()) {
+			if(this.name1.getIsRental()) {
 				System.out.println(this.name1.getName() + "이 반납되었습니다.");
-				name1.setRentalState(true);
+				name1.setisRental(true);
 			}
 			else {
 				System.out.println(bookName + "은 대여중인 만화책이 아닙니다.");
 			}
 		}
 		else if (bookName == this.name2.getName()) {
-			if(this.name2.getRentalState()) {
+			if(this.name2.getIsRental()) {
 				System.out.println(this.name2.getName() + "이 반납되었습니다.");
-				name2.setRentalState(true);
+				name2.setisRental(true);
 			}
 			else {
 				System.out.println(bookName + "은 대여중인 만화책이 아닙니다.");
 			}
 		}
 		else if (bookName == this.name3.getName()) {
-			if(this.name3.getRentalState()) {
+			if(this.name3.getIsRental()) {
 				System.out.println(this.name3.getName() + "이 반납되었습니다.");
-				name3.setRentalState(true);
+				name3.setisRental(true);
 			}
 			else {
 				System.out.println(bookName + "은 대여중인 만화책이 아닙니다.");
 			}
 		}
 		else if (bookName == this.name4.getName()) {
-			if(this.name4.getRentalState()) {
+			if(this.name4.getIsRental()) {
 				System.out.println(this.name4.getName() + "이 반납되었습니다.");
-				name4.setRentalState(true);
+				name4.setisRental(null);
 			}
 			else {
 				System.out.println(this.name1.getName() + "은 대여중인 만화책이 아닙니다.");
@@ -147,10 +147,10 @@ public class CartoonCafe {
 	}
 	public void printAllBook( ) {
 		System.out.println("====== 보유중인 만화책 목록 =======");
-		System.out.println(this.name1.getName() + " > " + this.name1.getRentalState());
-		System.out.println(this.name2.getName() + " > " + this.name2.getRentalState());
-		System.out.println(this.name3.getName() + " > " + this.name3.getRentalState());
-		System.out.println(this.name4.getName() + " > " + this.name4.getRentalState());
+		System.out.println(this.name1.getName() + " > " + this.name1.getIsRental());
+		System.out.println(this.name2.getName() + " > " + this.name2.getIsRental());
+		System.out.println(this.name3.getName() + " > " + this.name3.getIsRental());
+		System.out.println(this.name4.getName() + " > " + this.name4.getIsRental());
 	}
 	
 }
