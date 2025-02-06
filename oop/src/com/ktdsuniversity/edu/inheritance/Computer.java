@@ -11,7 +11,7 @@ public class Computer {
 	}
 	
 	public static void main(String[] args) {
-		Cpu intelCHip = new Cpu("intel", "i9");
+		Cpu intelChip = new Cpu("intel", "i9");
 		// intelCHip.calculate();
 		
 		/**
@@ -68,7 +68,7 @@ public class Computer {
 		System.out.println("amdChip is a Apu: " + (amdChip instanceof Apu));
 		System.out.println("tempString is a Apu: " + ((Object) tempString instanceof Apu));
 		
-		calculateAndDraw(intelCHip);
+		calculateAndDraw(intelChip);
 		calculateAndDraw(amdChip);
 	}
 }
