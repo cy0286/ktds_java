@@ -21,4 +21,20 @@ public class Contact {
 	public void printContact() {
 		System.out.println("이름: " + this.name + ", 연락처: " + this.phone);
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (obj instanceof Contact other) {
+			boolean isEquals = this.name.equals(other.getName());
+			isEquals &= this.phone.equals(other.getPhone());
+			return isEquals;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public String toString() {
+		return "이름: " + this.name + ", 연락처: " + this.phone;
+	}
 }

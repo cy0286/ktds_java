@@ -18,4 +18,24 @@ public class EmailContact extends Contact {
 		super.printContact();
 		System.out.println("이메일: " + this.email);
 	}
+	
+	@Override
+	public String toString() {
+		return "이름: " + super.getName() + ", 연락처: " + super.getPhone() + ", 이메일: " + this.email;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (obj instanceof Contact other) {
+			boolean isEquals = super.getName().equals(other.getName());
+			isEquals &= super.getPhone().equals(other.getPhone());
+			
+			if(other instanceof EmailContact emailOther) {
+				isEquals &= this.email.equals(emailOther.getEmail());
+			}
+			return isEquals;
+		}
+		return super.equals(obj);
+	}
 }
