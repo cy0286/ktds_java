@@ -1,6 +1,6 @@
 package com.ktdsuniversity.edu.interfaceexam;
 
-//public class DanawaRemoteCOntrol implements RemoteControl {
+//public class DanawaRemoteCOntrol implements RemoteControl, DanawaTvSignal { -> 다중 구현 가능
 public class DanawaRemoteCOntrol implements DanawaTvSignal {
 	@Override
 	public void powerOn() {

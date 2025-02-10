@@ -1,6 +1,8 @@
 package com.ktdsuniversity.edu.inheritance.abstractclass;
 
-public class Human extends Animal {
+// class 는 다중 상속 불가
+// public class Human extends Animal, Fly {
+public class Human extends Animal{
 	
 	private String name;
 	private int age;

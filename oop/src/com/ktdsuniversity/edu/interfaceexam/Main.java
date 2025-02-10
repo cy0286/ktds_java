@@ -61,5 +61,9 @@ public class Main {
 		System.out.println("=====================");
 		oledTv.on(danawaRemoteControl);
 		oledTv.off(danawaRemoteControl);
+		
+		System.out.println("=====================");
+		godRemoteControl.process();
+		danawaRemoteControl.process();
 	}
 }

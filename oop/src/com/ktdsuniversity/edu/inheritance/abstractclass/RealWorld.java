@@ -5,10 +5,11 @@ public class RealWorld {
 	public static void behavior(Animal animal) {
 		
 		for (int i = 0; i < 10; i++) {
-			animal.movement();
-			animal.movement();
-			animal.breath();
-			animal.eat();
+//			animal.movement();
+//			animal.movement();
+//			animal.breath();
+//			animal.eat();
+			animal.live();
 		}
 	}
 	
@@ -22,13 +23,15 @@ public class RealWorld {
 //		dog.movement();
 //		dog.breath();
 //		dog.eat();
-		behavior(dog);
+//		behavior(dog);
+		dog.live();
 		
 		Animal human = new Human("송채영", 24, "집");
-		behavior(human);
+//		behavior(human);
+		human.live();
 		
 		Animal snake = new Snake("야산");
-		behavior(snake);
-
+//		behavior(snake);
+		snake.live();
 	}
 }

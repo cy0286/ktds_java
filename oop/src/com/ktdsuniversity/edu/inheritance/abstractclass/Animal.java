@@ -25,11 +25,21 @@ public abstract class Animal {
 		this.hungry = (int) (Math.random() * 100);
 	}
 	
+	public void  live() {
+		this.movement();
+		this.breath();
+		this.eat();
+	}
+	
 	// abstract method
 	public abstract void movement();
 	
 	public abstract void breath();
 	
 	public abstract void eat();
+
+	public static void main(String[] args) {
+				System.out.println("=====================");
+	}
 
 }
