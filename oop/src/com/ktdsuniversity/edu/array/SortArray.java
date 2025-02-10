@@ -32,7 +32,7 @@ public class SortArray {
 		
 		System.out.println(Arrays.toString(numbers));
 		
-		/** 
+		/*
 		 * bubble sort
 		 * 시작 [56, 12, 58, 80, 1, 2]
 		 * 반복 1, 0과 1 비교, (56 > 12)
