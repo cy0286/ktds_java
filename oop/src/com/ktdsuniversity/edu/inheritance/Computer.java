@@ -14,7 +14,7 @@ public class Computer {
 		Cpu intelChip = new Cpu("intel", "i9");
 		// intelCHip.calculate();
 		
-		/**
+		/*
 		 * Cpu 클래스를 확장한 Apu
 		 * Cpu 클래스의 멤버변수와 메소드에 접근이 가능함 (마치 내것처럼)
 		 * 
@@ -23,7 +23,7 @@ public class Computer {
 		 * amdChip.draw();
 		 */
 		
-		/**
+		/*
 		 * 상속이 가지는 다형성의 장점
 		 * SubClass는 SuperClass의 instance에 들어갈 수 있음
 		 * SubClass is a SuperClass로 인해 가능함
@@ -34,7 +34,7 @@ public class Computer {
 		 * amdChip.draw -> error !
 		 */
 
-		/**
+		/*
 		 * is a
 		 * Sub class is a Super Class
 		 * Super class isnt a sub class
@@ -49,7 +49,7 @@ public class Computer {
 		 *  int -> String (x)
 		 */
 		
-		/**
+		/*
 		 * Apu is a Cpu
 		 * Cpu isnt a Apu
 		 * Cpu is a Apu => 가능하려면 (Apu) cpu

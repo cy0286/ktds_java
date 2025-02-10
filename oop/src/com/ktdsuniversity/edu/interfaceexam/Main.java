@@ -4,7 +4,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		/**
+		/*
 		 * RemoteControl(interface)
 		 * 	-> (extends) DanawaTvSignal(interface)
 		 * 	
@@ -38,7 +38,7 @@ public class Main {
 		oledTv.on(godRemoteControl);
 		oledTv.off(godRemoteControl);
 		
-		/**
+		/*
 		 *  상속의 의미 1. 확장 2. is a
 		 *  인터페이스를 구현하는 것도 is a 가 성립함
 		 *  (StandardTv)RemoteControl is a RemoteControl
