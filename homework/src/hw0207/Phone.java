@@ -1,11 +1,89 @@
 package hw0207;
 
+import hw0207.exceptions.ContactAppException;
 import hw0207.exceptions.ContactNotFoundException;
 import hw0207.exceptions.ContactOutOfBoundsException;
 import hw0207.exceptions.NullContactException;
 
 public class Phone {
 
+	public static void run() {
+
+		ContactAppInteface app = new OtherContactApp(30);
+
+		// 0
+		app.addNewContact(new Contact(3, "장민창", "010-1234-1234", "me1.jpg"));
+		// 1
+		app.addNewContact(new Contact(5, "홍길동", "010-2234-1234", "me2.jpg"));
+		// 2
+		app.addNewContact(new Contact(1, "임꺽정", "010-3234-1234", "me3.jpg"));
+
+		// 3
+		app.addNewContact(new Contact(2, "김준수", "010-4234-1234", "me4.jpg"));
+		// 4
+		app.addNewContact(new AdditionalContact(4, "최창민", "010-4234-1234", "me5.jpg", 19800101, "없음", "없음", "서울 어딘가"));
+
+		System.out.println("정렬되기 전");
+		for (int i = 0; i < 40; i++) {
+			try {
+				Contact contact = app.getContactAt(i);
+				System.out.println(contact);
+			} catch (ContactOutOfBoundsException cooe) {
+				System.out.println("조회 실패! " + cooe.getMessage());
+			} catch (ContactNotFoundException cnfe) {
+				System.out.println("조회 실패! " + cnfe.getMessage());
+			} catch (NullContactException nce) {
+				System.out.println("조회 실패! " + nce.getMessage());
+			}
+		}
+
+		app.bubbleSort();
+
+		// 3 번 인덱스 연락처 삭제
+		app.remove(3);
+
+		System.out.println("정렬 후");
+		for (int i = 0; i < 40; i++) {
+
+			try {
+				Contact contact = app.getContactAt(i);
+				System.out.println(contact);
+			}
+//				catch (Throwable cooe) { // 절대 사용 금지.
+//					System.out.println("조회 실패! " + cooe.getMessage());
+//				}
+//				catch (Exception cooe) { // 절대 사용 금지.
+//					System.out.println("조회 실패! " + cooe.getMessage());
+//				}
+//				catch (RuntimeException cooe) { // 절대 사용 금지.
+//					System.out.println("조회 실패! " + cooe.getMessage());
+//				}
+			catch (ContactOutOfBoundsException | ContactNotFoundException | NullContactException exception) {
+				// System.out.println("조회 실패! " + exception.getMessage());
+				throw new ContactAppException(exception.getMessage(), exception);
+			}
+//				catch (ContactNotFoundException cnfe) {
+//					System.out.println("조회 실패! " + cnfe.getMessage());
+//				}
+//				catch (NullContactException nce) {
+//					System.out.println("조회 실패! " + nce.getMessage());
+//				}
+		}
+
+	}
+
+	public static void throwException() {
+		
+		try{
+			throw new Exception("예외 받아랏!");
+		}
+		catch (Exception e) {
+			// System.out.println("예외 발생!");
+			throw new RuntimeException(e.getMessage(),e);
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		
 //		ContactApp contactApp = new ContactApp(5);
@@ -62,66 +140,17 @@ public class Phone {
 //			System.out.println(addcontact2.getId());	
 //		}
 		
-		ContactAppInteface app = new OtherContactApp(30);
+		throwException();
 		
-		// 0
-		app.addNewContact( new Contact(3, "장민창", "010-1234-1234", "me1.jpg") );
-		// 1
-		app.addNewContact( new Contact(5, "홍길동", "010-2234-1234", "me2.jpg") );
-		// 2
-		app.addNewContact( new Contact(1, "임꺽정", "010-3234-1234", "me3.jpg") );
-		
-		// 3
-		app.addNewContact( new Contact(2, "김준수", "010-4234-1234", "me4.jpg") );
-		// 4
-		app.addNewContact( new AdditionalContact(4, "최창민", "010-4234-1234", "me5.jpg", 19800101, "없음", "없음", "서울 어딘가") );
-		
-		System.out.println("정렬되기 전");
-		for (int i = 0; i < 40; i++) {
-			try {
-				Contact contact = app.getContactAt(i);
-				System.out.println(contact);
-			}
-			catch (ContactOutOfBoundsException cooe) {
-				System.out.println("조회 실패! " + cooe.getMessage());
-			}
-			catch (ContactNotFoundException cnfe) {
-				System.out.println("조회 실패! " + cnfe.getMessage());
-			}
-			catch (NullContactException nce) {
-				System.out.println("조회 실패! " + nce.getMessage());
-			}
+		// catch 한 Exception 예외를 RuntimeException 으로 변환해서 던지기
+		// 위 코드를 호출하는 코드에서는 try ~ catch 불필요
+		try {
+			run();
 		}
-		
-		app.bubbleSort();
-		
-		// 3 번 인덱스 연락처 삭제
-		app.remove(3);
-		
-		System.out.println("정렬 후");
-		for (int i = 0; i < 40; i++) {
-			try {
-				Contact contact = app.getContactAt(i);
-				System.out.println(contact);
-			}
-//			catch (Throwable cooe) { // 절대 사용 금지.
-//				System.out.println("조회 실패! " + cooe.getMessage());
-//			}
-//			catch (Exception cooe) { // 절대 사용 금지.
-//				System.out.println("조회 실패! " + cooe.getMessage());
-//			}
-//			catch (RuntimeException cooe) { // 절대 사용 금지.
-//				System.out.println("조회 실패! " + cooe.getMessage());
-//			}
-			catch (ContactOutOfBoundsException | ContactNotFoundException | NullContactException exception) {
-				System.out.println("조회 실패! " + exception.getMessage());
-			}
-//			catch (ContactNotFoundException cnfe) {
-//				System.out.println("조회 실패! " + cnfe.getMessage());
-//			}
-//			catch (NullContactException nce) {
-//				System.out.println("조회 실패! " + nce.getMessage());
-//			}
+		catch (ContactAppException cae) {
+			System.out.println(cae.getMessage());
+			Throwable cause = cae.getCause();
+			cause.printStackTrace();
 		}
 	}
 }
