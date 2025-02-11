@@ -4,7 +4,7 @@ import hw0207.exceptions.ContactNotFoundException;
 import hw0207.exceptions.ContactOutOfBoundsException;
 import hw0207.exceptions.NullContactException;
 
-public class ContactApp implements ContactAppInteface {
+public class OtherContactApp implements ContactAppInteface {
 
 	/**
 	 * 현재 연락처 개수
@@ -15,7 +15,7 @@ public class ContactApp implements ContactAppInteface {
 	 */
 	private Contact[] contacts;
 	
-	public ContactApp(int contactMaxCount) {
+	public OtherContactApp(int contactMaxCount) {
 		// contactMaxCount : contacts 배열에 들어갈 수 있는 최대 연락처 개수
 		this.contacts = new Contact[contactMaxCount];
 	}
