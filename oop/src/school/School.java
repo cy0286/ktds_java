@@ -4,12 +4,12 @@ public class School {
 
 	public static void main(String[] args) {
 		
-		Student student = new Student(); 
+		Student student = new Student((int) (Math.random() * 100), (int) (Math.random() * 100), (int) (Math.random() * 100), (int) (Math.random() * 100) ); 
 		
-		student.java = (int) (Math.random() * 100);
-		student.python = (int) (Math.random() * 100);
-		student.cpp = (int) (Math.random() * 100);
-		student.csharp = (int) (Math.random() * 100);
+//		student.java = (int) (Math.random() * 100);
+//		student.python = (int) (Math.random() * 100);
+//		student.cpp = (int) (Math.random() * 100);
+//		student.csharp = (int) (Math.random() * 100);
 		
 		int sum = student.getSumAllScores();
 		System.out.println(sum);
