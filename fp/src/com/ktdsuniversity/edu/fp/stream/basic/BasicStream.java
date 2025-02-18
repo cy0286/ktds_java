@@ -1,5 +1,6 @@
 package com.ktdsuniversity.edu.fp.stream.basic;
 
+import java.nio.file.DirectoryStream.Filter;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -8,6 +9,21 @@ import com.ktdsuniversity.edu.fp.stream.data.DishList;
 
 public class BasicStream {
 
+	public void run() {
+		// Stream 은 최종연산 없이는 동작되지 않는다
+		DishList.get()	
+				.stream()
+				.peek(dish -> System.out.println("최종연산 없는 스트림: " + dish)) // 결과 나오지 않음
+				.filter(dish -> dish.getisVegetarian());
+		
+	 	long count = DishList.get()	
+	 						 .stream()
+	 						 .peek(dish -> System.out.println("최종연산 있는 스트림: " + dish))
+	 						 .filter(dish -> dish.getisVegetarian())
+	 						 .count(); // 최종연산 long 반환
+	 	System.out.println(count);
+	}
+	
 	public void printMenuStream() {
 		// 1. 요리 목록 가져온다.
 		List<Dish> menuList = DishList.get();
@@ -43,5 +59,6 @@ public class BasicStream {
 		BasicStream bs = new BasicStream();
 		bs.printMenuNotStream();
 		bs.printMenuStream();
+		bs.run();
 	}
 }
