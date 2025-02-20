@@ -1,11 +1,17 @@
 package com.ktdsuniversity.edu.fp.stream.file.csv;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubRegion {
 
 	private int id;
 	private String name;
 	private int regionId;
 	private String wikiDataId;
+	
+	private Region region;
+	private List<Country> countries;
 	
 	public SubRegion(String[] subRegionData) {
 		this(
@@ -21,8 +27,25 @@ public class SubRegion {
 		this.name = name;
 		this.regionId = regionId;
 		this.wikiDataId = wikiDataId;
+		this.countries = new ArrayList<>();
 	}
 
+	public void setCountries(List<Country> countries) {
+		this.countries = countries;
+	}
+	
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+	
+	public List<Country> getCountries() {
+		return this.countries;
+	}
+	
+	public Region getRegion() {
+		return this.region;
+	}
+	
 	public int getId() {
 		return this.id;
 	}

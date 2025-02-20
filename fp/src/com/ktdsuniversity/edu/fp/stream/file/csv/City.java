@@ -14,6 +14,8 @@ public class City {
 	private double longitude;
 	private String wikiDataId;
 	
+	private State state;
+	
 	public City(String[] cityData) {
 		this(
 			Integer.parseInt(cityData[0]), // id
@@ -45,6 +47,14 @@ public class City {
 		this.wikiDataId = wikiDataId;
 	}
 
+	public State getState() {
+		return this.state;
+	}
+	
+	public void setState(State state) {
+		this.state = state;
+	}
+	
 	public int getId() {
 		return this.id;
 	}
