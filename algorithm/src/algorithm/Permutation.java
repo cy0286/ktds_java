@@ -73,12 +73,12 @@ public class Permutation {
 	}
 	
 	public static void main(String[] args) {
-		Permutation p = new Permutation(3);
+		Permutation p = new Permutation(2);
 		
-		int[] array = new int[3];
+		int[] array = new int[2];
 		array[0] = 1;
 		array[1] = 2;
-		array[2] = 3;
+//		array[2] = 3;
 		
 		p.permutation(array);
 		

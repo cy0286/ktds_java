@@ -1,6 +1,5 @@
 package com.ktdsuniversity.edu.collections.list;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class ListAndArrayListExam {

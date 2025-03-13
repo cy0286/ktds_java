@@ -5,7 +5,7 @@ public class LgTV {
 	public void on(RemoteControl signal) {
 		signal.powerOn();
 		System.out.println("Life is Good");
-		if (signal instanceof DanawaRemoteCOntrol drc) {
+		if (signal instanceof DanawaRemoteControl drc) {
 			drc.openDanawaPage();
 		}
 	}

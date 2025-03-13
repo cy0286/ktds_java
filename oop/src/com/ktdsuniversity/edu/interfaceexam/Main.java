@@ -46,7 +46,7 @@ public class Main {
 		 */
 
 		System.out.println("=====================");
-		RemoteControl danawaRemoteControl= new DanawaRemoteCOntrol();
+		RemoteControl danawaRemoteControl= new DanawaRemoteControl();
 		oledTv.on(godRemoteControl);
 		oledTv.off(danawaRemoteControl);
 		

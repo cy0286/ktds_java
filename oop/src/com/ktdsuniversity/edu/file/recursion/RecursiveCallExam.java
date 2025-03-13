@@ -27,7 +27,7 @@ public class RecursiveCallExam {
 	public static void printNumbers(int startNumber) {
 		// call stack push 할 때 실행
 		System.out.println("현재 번호: " + startNumber);
-		if (startNumber > 0) {  // if 조건문 없이 출력하면 -5707까지 찍힘
+		if (startNumber > 0) {  
 			printNumbers(startNumber - 1); // -1을 안 해주면 무한히 돔
 		}
 		// call stack pop 할 때 실행
